@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: eureka-client-peer2
+server:
+  port: 8081
+
