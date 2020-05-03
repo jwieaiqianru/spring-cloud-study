@@ -7,7 +7,18 @@ spring:
 server:
   port: 8080
 
+# eureka client 配置
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
 
+
+# actuator 配置
 management:
   endpoints:
     web:

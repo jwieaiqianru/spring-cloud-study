@@ -5,4 +5,11 @@ spring:
     name: eureka-client-peer2
 server:
   port: 8081
-
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+     defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/

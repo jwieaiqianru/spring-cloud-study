@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: peer1
+
+---
+spring:
+  application:
+    name: eureka-server-peer1
+  profiles: peer1
+
+server:
+  port: 7001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.application.name}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:7002/eureka/
+  server:
+    enable-self-preservation: false
+    expected-client-renewal-interval-seconds: 30
+
+---
+spring:
+  profiles: peer2
+  application:
+    name: eureka-server-peer2
+server:
+  port: 7002
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.application.name}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:7001/eureka/
+  server:
+    enable-self-preservation: false
+    expected-client-renewal-interval-seconds: 30
