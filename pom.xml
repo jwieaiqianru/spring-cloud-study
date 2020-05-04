@@ -19,6 +19,8 @@
         <module>eureka-client-peer1</module>
         <module>eureka-client-peer2</module>
         <module>eureka-server-peer1</module>
+        <module>eureka-ribbon</module>
+        <module>eureka-feign</module>
     </modules>
 
     <properties>
@@ -48,6 +50,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 
     <build>
