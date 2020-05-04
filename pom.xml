@@ -21,6 +21,7 @@
         <module>eureka-server-peer1</module>
         <module>eureka-ribbon</module>
         <module>eureka-feign</module>
+        <module>eureka-hystrix</module>
     </modules>
 
     <properties>

@@ -1,6 +1,7 @@
 package com.didala.jiang.feign.eurekafeign.controller;
 
 import com.didala.jiang.feign.eurekafeign.remote.HelloApi;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
